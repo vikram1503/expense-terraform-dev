@@ -80,7 +80,7 @@ module "records" {
       records = [
         module.db.db_instance_address
       ]
-      allow_overwrite = true
+      
     }
     
   ]
