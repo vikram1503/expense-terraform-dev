@@ -36,6 +36,7 @@ module "ansible" {
         Name = "${var.project_name}-${var.environment}-ansible"
     }
   )
+  depends_on = [ module.backend,module.frontend ]
 }
 module "frontend" {
   source  = "terraform-aws-modules/ec2-instance/aws"
