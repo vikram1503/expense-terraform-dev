@@ -53,7 +53,7 @@ resource "aws_security_group_rule" "db_backend" {
   from_port         = 3306
   to_port           = 3306
   protocol          = "tcp"
-  source_security_group_id = module.bastion.sg_id
+  source_security_group_id = module.backend.sg_id
   security_group_id = module.db.sg_id
 }
 
@@ -62,7 +62,7 @@ resource "aws_security_group_rule" "db_bastion" {
   from_port         = 3306
   to_port           = 3306
   protocol          = "tcp"
-  source_security_group_id = module.backend.sg_id
+  source_security_group_id = module.bastion.sg_id
   security_group_id = module.db.sg_id
 }
 
